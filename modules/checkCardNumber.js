@@ -1,5 +1,8 @@
 import cards from "./cards.json" assert { type: "json" };
 import luhnCheck from "./luhnCheck.js";
+import formatCreditCardNumber from "./format-input.js";
+
+const outputdiv = document.getElementById("outputValue");
 
 const checkBank = (number) => {
   number = number.toString().split("");
@@ -17,14 +20,28 @@ const checkBank = (number) => {
         (cardIndex[i] === parseInt(number[0]) && luhnCheck(number.join("")))
       ) {
         if (cardLenths.includes(numberLen)) {
-          return `${card}`;
+          formatCreditCardNumber();
+          outputdiv.style.backgroundColor = "	#AAFF00";
+          outputdiv.style.color = "black";
+          outputdiv.style.opacity = "1";
+          outputdiv.style.height = "100px";
+          return `Number is correct. Card issuer is ${card}.`;
         } else {
-          return `Nieprawidłowy`;
+          formatCreditCardNumber();
+          outputdiv.style.backgroundColor = "#FF4433";
+          outputdiv.style.color = "black";
+          outputdiv.style.opacity = "1";
+          outputdiv.style.height = "100px";
+          return `Invalid number`;
         }
       }
     }
   }
-  return `Nieprawidłowy`;
+  outputdiv.style.backgroundColor = "#FF4433";
+  outputdiv.style.color = "black";
+  outputdiv.style.opacity = "1";
+  outputdiv.style.height = "100px";
+  return `Enter correct value please!`;
 };
 
 export default checkBank;

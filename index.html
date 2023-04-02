@@ -9,15 +9,27 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <footer>
+      &copy; 2023 by <a href="https://github.com/SCREECH115">SCREECH115</a>
+    </footer>
     <div class="container">
       <div class="title-container">Verify Bank Card</div>
       <div class="content-container">
         <div class="input-card">
-          <input class="input-value" id="inputValue" type="text" />
+          <input
+            class="input-value"
+            id="inputValue"
+            type="text"
+            placeholder="Enter number here"
+          />
         </div>
-        <button class="generateBtn" id="checkButton">Verify</button>
+        <button class="generateBtn" id="checkButton">Verify Number</button>
         <div class="output-card">
-          <input id="outputValue" class="output-value" type="text" />
+          <input id="outputValue" class="output-value" type="text" disabled />
+        </div>
+        <div class="buttons">
+          <button id="copyBtn" class="copy-btn">Copy</button>
+          <button id="resetBtn" class="reset-btn">Reset</button>
         </div>
       </div>
     </div>
