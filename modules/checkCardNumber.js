@@ -3,6 +3,7 @@ import luhnCheck from "./luhnCheck.js";
 import formatCreditCardNumber from "./format-input.js";
 
 const outputdiv = document.getElementById("outputValue");
+const buttons = document.querySelector(".buttons");
 
 const checkBank = (number) => {
   number = number.toString().split("");
@@ -25,6 +26,7 @@ const checkBank = (number) => {
           outputdiv.style.color = "black";
           outputdiv.style.opacity = "1";
           outputdiv.style.height = "100px";
+          buttons.style.opacity = "1";
           return `Number is correct. Card issuer is ${card}.`;
         } else {
           formatCreditCardNumber();

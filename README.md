@@ -47,3 +47,4 @@ You can enter other card issuers and validate based on:
 1. Go to https://screech115.github.io/bank-card-verify/
 2. Enter a value in the "Enter number here" field
 3. Press "VERIFY CARD"
+4. Check the result

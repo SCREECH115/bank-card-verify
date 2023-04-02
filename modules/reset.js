@@ -1,6 +1,7 @@
 const cardValue = document.getElementById("inputValue");
 const convertedValue = document.getElementById("outputValue");
 const outputdiv = document.getElementById("outputValue");
+const buttons = document.querySelector(".buttons");
 
 const reset = () => {
   cardValue.value = "";
@@ -9,6 +10,7 @@ const reset = () => {
   outputdiv.style.color = "white";
   outputdiv.style.opacity = "0";
   outputdiv.style.height = "0";
+  buttons.style.opacity = "0";
 };
 
 export default reset;
