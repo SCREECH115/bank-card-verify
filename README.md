@@ -19,6 +19,29 @@ The application also has the function of copying the result and resetting the fo
 Full list of test numbers available on PayPal website:
 https://developer.paypal.com/api/nvp-soap/payflow/payflow-pro/payflow-pro-testing/
 
+### Config
+
+The algorithm checks the entered data based on the config, which is in:
+**[/modules/cards.json](https://github.com/SCREECH115/bank-card-verify/blob/main/modules/cards.json)**
+
+You can enter other card issuers and validate based on:
+
+- length of the number
+- starting index
+
+#### Example
+
+```
+"Visa": {
+   "numberLength": [13, 16],
+   "startIndex": [4]
+ },
+"Discover": {
+   "numberLength": [16],
+   "startIndex": [60]
+ },
+```
+
 ### How to start?
 
 1. Go to https://screech115.github.io/bank-card-verify/
