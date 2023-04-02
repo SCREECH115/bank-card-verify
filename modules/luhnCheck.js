@@ -3,6 +3,10 @@ const evenOrOdd = (cardNumber) => cardNumber.length % 2 === 0;
 const luhnCheck = (number) => {
   number = number.toString().split("");
 
+  number = number.filter(function (str) {
+    return /\S/.test(str);
+  });
+
   let arr = [];
   let restNumbers = [];
   if (evenOrOdd(number)) {

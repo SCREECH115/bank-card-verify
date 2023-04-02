@@ -7,6 +7,10 @@ const buttons = document.querySelector(".buttons");
 
 const checkBank = (number) => {
   number = number.toString().split("");
+  number = number.filter(function (str) {
+    return /\S/.test(str);
+  });
+
   const numberLen = number.length;
 
   for (let card in cards) {
