@@ -1,9 +1,7 @@
 import cards from "./cards.json" assert { type: "json" };
 import luhnCheck from "./luhnCheck.js";
 import formatCreditCardNumber from "./format-input.js";
-
-const outputdiv = document.getElementById("outputValue");
-const buttons = document.querySelector(".buttons");
+import { showButtons, hideButtons } from "./manage-buttons.js";
 
 const checkBank = (number) => {
   number = number.toString().split("");
@@ -26,27 +24,17 @@ const checkBank = (number) => {
       ) {
         if (cardLenths.includes(numberLen)) {
           formatCreditCardNumber();
-          outputdiv.style.backgroundColor = "	#AAFF00";
-          outputdiv.style.color = "black";
-          outputdiv.style.opacity = "1";
-          outputdiv.style.height = "100px";
-          buttons.style.opacity = "1";
+          showButtons();
           return `Number is correct. Card issuer is ${card}.`;
         } else {
           formatCreditCardNumber();
-          outputdiv.style.backgroundColor = "#FF4433";
-          outputdiv.style.color = "black";
-          outputdiv.style.opacity = "1";
-          outputdiv.style.height = "100px";
+          hideButtons();
           return `Invalid number`;
         }
       }
     }
   }
-  outputdiv.style.backgroundColor = "#FF4433";
-  outputdiv.style.color = "black";
-  outputdiv.style.opacity = "1";
-  outputdiv.style.height = "100px";
+  hideButtons();
   return `Enter correct value please!`;
 };
 
